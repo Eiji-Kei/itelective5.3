@@ -18,7 +18,7 @@ class LoginScreen extends StatelessWidget {
           ),
           Container(
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(30, 70, 30, 30),
+              padding: const EdgeInsets.fromLTRB(0, 70, 30, 10),
               child: Column(              
                 children: [
                   Row(
