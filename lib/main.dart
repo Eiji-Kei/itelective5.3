@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:ite5_2022/screens/login.dart';
 import 'package:ite5_2022/screens/signup.dart';
 import 'package:ite5_2022/screens/home.dart';
-import 'package:ite5_2022/screens/usercard.dart';
 
 void main() {
   runApp(const MyApp());
