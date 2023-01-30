@@ -1,7 +1,5 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:ite5_2022/shared/leftdrawer.dart';
 import 'package:ite5_2022/shared/rightdrawer.dart';
@@ -34,13 +32,9 @@ class _HomeState extends State<Home> {
           
       ),
 
-      drawer: RightDrawer(),
-      endDrawer: LeftDrawer(),
+      drawer: LeftDrawer(),
+      endDrawer: RightDrawer(),
          
-
-
-
-
 
       body: Stack( 
         children: [

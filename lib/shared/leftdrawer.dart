@@ -15,7 +15,8 @@ class _LeftDrawerState extends State<LeftDrawer> {
     return 
         Container(
           height: MediaQuery.of(context).size.height,
-          width: 400,
+          width: MediaQuery.of(context).size.width > 720 ? MediaQuery.of(context).size.width * .5 
+               : MediaQuery.of(context).size.width *.33,
           color: Color.fromARGB(255, 113, 164, 236),
     );
   }
