@@ -1,4 +1,8 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
+import 'package:ite5_2022/screens/signup.dart';
+import 'package:ite5_2022/screens/home.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -123,13 +127,13 @@ class LoginScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      socialButtons('assets/icons/facebook.png'),
+                      socialButtons('assets/icons/facebook.png', 1, context),
                       const SizedBox(width: 20,),
-                      socialButtons('assets/icons/ig.png'),
+                      socialButtons('assets/icons/ig.png', 2, context),
                       const SizedBox(width: 20,),
-                      socialButtons('assets/icons/twitter.png'),
+                      socialButtons('assets/icons/twitter.png', 3, context),
                       const SizedBox(width: 20,),
-                      socialButtons('assets/icons/google.png'),                    
+                      socialButtons('assets/icons/google.png', 4, context),                    
                     ],
                   ),
 
@@ -147,7 +151,9 @@ class LoginScreen extends StatelessWidget {
                       ),
 
                       TextButton(
-                        onPressed: () => 'Null', 
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUp()));
+                        }, 
                         child: const Text(
                           'Sign Up',
                           style: TextStyle(
@@ -168,7 +174,7 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  Container socialButtons(String caption) {
+  Container socialButtons(String caption, int click, BuildContext context) {
     return Container(
                       width: 50,
                       height: 50,
@@ -186,7 +192,9 @@ class LoginScreen extends StatelessWidget {
                       ),
                       child: 
                         IconButton(
-                          onPressed: () => 'Null', 
+                          onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const Home()));
+                          }, 
                           icon: Image.asset(
                             caption,
                             height: 30,

@@ -1,7 +1,10 @@
-// ignore: unused_import
+// ignore_for_file: unused_import
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ite5_2022/screens/login.dart';
+import 'package:ite5_2022/screens/signup.dart';
+import 'package:ite5_2022/screens/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'KAG DESIGNER',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
