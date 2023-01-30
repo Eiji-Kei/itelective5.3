@@ -1,27 +1,15 @@
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
-import 'package:ite5_2022/screens/login.dart';
 
-class RightDrawer extends StatefulWidget {
-  const RightDrawer({super.key});
+class UserCard extends StatelessWidget {
+  const UserCard({super.key});
 
-  @override
-  State<RightDrawer> createState() => _RightDrawerState();
-}
-
-class _RightDrawerState extends State<RightDrawer> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width > 720 ? MediaQuery.of(context).size.width * .5 
-           : MediaQuery.of(context).size.width *.33,
-      color: Color.fromARGB(255, 113, 164, 236),
-
-          child: SizedBox(
-            width: 400,
-            height: 680,
-            child: Padding(
-              padding: const EdgeInsets.all(30.0),
+    return MaterialApp(
+    home: Scaffold(
+      body: Center(
               child: Column(
                 children:[
                   Center(
@@ -61,11 +49,11 @@ class _RightDrawerState extends State<RightDrawer> {
                     'Slytherin',
                     style: TextStyle(
                       fontSize: 15,
-                      color: Color.fromARGB(255, 255, 255, 255),
+                      color: Color.fromARGB(255, 126, 126, 126),
                     ), 
                   ), 
 
-                  const SizedBox(height: 40,), 
+                  const SizedBox(height: 30,), 
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -91,18 +79,18 @@ class _RightDrawerState extends State<RightDrawer> {
                     ],
                   ),
 
-                  const SizedBox(height: 40,),
+                  const SizedBox(height: 30,),
                     
                   const Text(
                     ' Lorem ipsum dolor sit amet, consectetur adip iscing elit. Sed et est et velit ornare ultrices. Ut vitae diam volutpatrisus eget. ',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 15,
-                      color: Color.fromARGB(255, 255, 255, 255),
+                      color: Color.fromARGB(255, 126, 126, 126),
                     ),
                   ), 
 
-                  const SizedBox(height: 30,),
+                  const SizedBox(height: 20,),
                   
                   SizedBox(
                     width: 170,
@@ -132,17 +120,15 @@ class _RightDrawerState extends State<RightDrawer> {
                       ),
                     ),
 
-                  const SizedBox(height: 100,), 
+                  const SizedBox(height: 30,), 
 
                   SizedBox(
                     width: 200,
                     height: 50,
                     child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginScreen()));
-                      },
+                      onPressed: () => 'Null',
                       style: ButtonStyle(
-                          backgroundColor: const MaterialStatePropertyAll<Color>(Color.fromARGB(255, 81, 147, 242)),
+                          backgroundColor: const MaterialStatePropertyAll<Color>(Color.fromARGB(255, 49, 182, 191)),
                           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25.0, ),
@@ -152,7 +138,7 @@ class _RightDrawerState extends State<RightDrawer> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
-                          Text('Log Out',
+                          Text('View Profile',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,  
@@ -169,6 +155,7 @@ class _RightDrawerState extends State<RightDrawer> {
           ), 
         ); 
   }
+
   Text socialnum(String caption) {
     return Text(
       caption,
@@ -186,9 +173,8 @@ class _RightDrawerState extends State<RightDrawer> {
       textAlign: TextAlign.center,
       style: const TextStyle(
         fontSize: 13,
-        color: Color.fromARGB(255, 255, 255, 255),
+        color: Color.fromARGB(255, 126, 126, 126),
       ), 
     );
   }
-
 }
