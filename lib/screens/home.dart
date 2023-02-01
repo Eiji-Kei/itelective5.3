@@ -111,6 +111,8 @@ Widget WebLayout(BuildContext context) {
       ),
 
       endDrawer: RightDrawer(),
+
+      
          
 
       body: Container( 
@@ -121,9 +123,10 @@ Widget WebLayout(BuildContext context) {
           
           
           
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+          Container(
+            height: MediaQuery.of(context).size.height ,
+            width: MediaQuery.of(context).size.width * .66,
+            child: 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,          
                 children: const [
@@ -136,7 +139,6 @@ Widget WebLayout(BuildContext context) {
                   ),
                 ],
               )
-            ],
           ),
         ],
 
