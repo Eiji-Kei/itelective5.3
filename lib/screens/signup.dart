@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:ite5_2022/screens/login.dart';
 
 class SignUp extends StatefulWidget {
@@ -130,7 +128,7 @@ class _SignUpState extends State<SignUp> {
                     ],
                   ),
 
-                  const SizedBox(height: 30,),
+                  const SizedBox(height: 20,),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

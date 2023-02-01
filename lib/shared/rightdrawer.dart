@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:ite5_2022/screens/login.dart';
 
@@ -14,137 +16,126 @@ class _RightDrawerState extends State<RightDrawer> {
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width > 720
-          ? MediaQuery.of(context).size.width * .5
-          : MediaQuery.of(context).size.width * .33,
+          ? MediaQuery.of(context).size.width * .33
+          : MediaQuery.of(context).size.width * .5,
       color: Color.fromARGB(255, 113, 164, 236),
       child: Container(
         child: ListView(
           padding: EdgeInsets.all(24),
           children: [
             SizedBox(
-              height: 500,
-              child: Container(
-                  child: Card(
+              height: 380,
+              child: Card(
                 elevation: 50,
                 shadowColor: Colors.white,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)),
+                borderRadius: BorderRadius.circular(30)),
                 child: Column(
+              children: [
+                Center(
+                  child: Stack(
+                    children: <Widget>[
+                      Image.asset(
+                        'me.png',
+                        width: 60,
+                        height: 60,
+                      ),
+                      Positioned(
+                        bottom: 5,
+                        right: 5,
+                        child: Image.asset(
+                          'check.png',
+                          width: 15,
+                          height: 15,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                const Text(
+                  'Gallawan, Kristine Angela A.',
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.black,
+                  ),
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                const Text(
+                  'Slytherin',
+                  style: TextStyle(
+                    fontSize: 9,
+                    color: Color.fromARGB(255, 125, 222, 252),
+                  ),
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Center(
-                      child: Stack(
-                        children: <Widget>[
-                          Image.asset(
-                            'me.png',
-                            width: 60,
-                            height: 60,
-                          ),
-                          Positioned(
-                            bottom: 5,
-                            right: 5,
-                            child: Image.asset(
-                              'check.png',
-                              width: 15,
-                              height: 15,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    const Text(
-                      'Gallawan, Kristine Angela A.',
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.black,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    const Text(
-                      'Slytherin',
-                      style: TextStyle(
-                        fontSize: 9,
-                        color: Color.fromARGB(255, 125, 222, 252),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                    socialcount('Projects     Following     Followers'),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    socialnum('11          246          135'),
+                  
+                  ],
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                const Text(
+                  ' Lorem ipsum dolor sit amet, consectetur adip iscing elit. Sed et est et velit ornare ultrices. Ut vitae diam volutpatrisus eget. ',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 9,
+                    color: Color.fromARGB(255, 125, 222, 252),
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                SizedBox(
+                  width: 170,
+                  height: 50,
+                  child: Padding(
+                    padding: const EdgeInsets.all(5),
+                    child: Row(
                       children: [
-                        socialcount('Projects'),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        socialcount('Following'),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        socialcount('Followers'),
+                        IconButton(
+                            onPressed: () => 'Null',
+                            icon: Icon(Icons.facebook)),
+                        IconButton(
+                            onPressed: () => 'Null', icon: Icon(Icons.abc)),
+                        IconButton(
+                            onPressed: () => 'Null',
+                            icon: Icon(Icons.backpack)),
+                        IconButton(
+                            onPressed: () => 'Null',
+                            icon: Icon(Icons.cached_rounded)),
                       ],
                     ),
-                    const SizedBox(
-                      height: 10,
+                  ),
+                ),
+                
+              ],
+                ),
+              ),
+            ),
+            const SizedBox(
+                      height: 200,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        socialnum('11'),
-                        SizedBox(
-                          width: 18,
-                        ),
-                        socialnum('246'),
-                        SizedBox(
-                          width: 19,
-                        ),
-                        socialnum('135'),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    const Text(
-                      ' Lorem ipsum dolor sit amet, consectetur adip iscing elit. Sed et est et velit ornare ultrices. Ut vitae diam volutpatrisus eget. ',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 9,
-                        color: Color.fromARGB(255, 125, 222, 252),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    SizedBox(
-                      width: 170,
-                      height: 50,
-                      child: Padding(
-                        padding: const EdgeInsets.all(5),
-                        child: Row(
-                          children: [
-                            IconButton(
-                                onPressed: () => 'Null',
-                                icon: Icon(Icons.facebook)),
-                            IconButton(
-                                onPressed: () => 'Null', icon: Icon(Icons.abc)),
-                            IconButton(
-                                onPressed: () => 'Null',
-                                icon: Icon(Icons.backpack)),
-                            IconButton(
-                                onPressed: () => 'Null',
-                                icon: Icon(Icons.cached_rounded)),
-                          ],
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 100,
-                    ),
-                    Container(
+            Container(
                       color: Color.fromARGB(255, 73, 139, 231),
                       child: ListTile(
                         textColor: Colors.white,
@@ -163,11 +154,8 @@ class _RightDrawerState extends State<RightDrawer> {
                         },
                       ),
                     ),
-                  ],
-                ),
-              )),
-            ),
           ],
+          
         ),
       ),
     );
