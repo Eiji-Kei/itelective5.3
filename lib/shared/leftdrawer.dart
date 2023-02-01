@@ -13,6 +13,7 @@ class LeftDrawer extends StatefulWidget {
 class _LeftDrawerState extends State<LeftDrawer> {
   @override
   Widget build(BuildContext context) {
+    bool yesno = false;
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width > 600
@@ -79,6 +80,7 @@ class _LeftDrawerState extends State<LeftDrawer> {
                 onTap: () => 'Null',
               ),
             ),
+
             Container(
               color: Color.fromARGB(255, 73, 139, 231),
               child: ListTile(
