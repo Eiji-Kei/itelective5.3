@@ -1,17 +1,15 @@
 // ignore_for_file: prefer_const_constructors, unrelated_type_equality_checks
 
 import 'package:flutter/material.dart';
-import 'package:ite5_2022/screens/about.dart';
-import 'package:ite5_2022/screens/home.dart';
 
-class LeftDrawer extends StatefulWidget {
-  const LeftDrawer({super.key});
+class LeftDrawer1 extends StatefulWidget {
+  const LeftDrawer1({super.key});
 
   @override
-  State<LeftDrawer> createState() => _LeftDrawerState();
+  State<LeftDrawer1> createState() => _LeftDrawerState();
 }
 
-class _LeftDrawerState extends State<LeftDrawer> {
+class _LeftDrawerState extends State<LeftDrawer1> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,6 +22,9 @@ class _LeftDrawerState extends State<LeftDrawer> {
         padding: EdgeInsets.all(24),
         child: Column(
           children: [
+            SizedBox(
+              height: 20,
+            ),
             Container(
               color: Color.fromARGB(255, 73, 139, 231),
               child: ListTile(
@@ -89,10 +90,7 @@ class _LeftDrawerState extends State<LeftDrawer> {
                   Icons.info,
                 ),
                 title: Text('About Us'),
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const AboutUs()));
-                },
+                onTap: () => 'Null',
               ),
             ),
           ],

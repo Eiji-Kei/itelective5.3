@@ -21,11 +21,11 @@ class _RightDrawerState extends State<RightDrawer> {
           : MediaQuery.of(context).size.width * .5,
       color: Color.fromARGB(255, 113, 164, 236),
       child: Container(
-        child: ListView(
-          padding: EdgeInsets.all(24),
+        padding: EdgeInsets.all(12),
+        child: Column(
           children: [
             SizedBox(
-              height: 400,
+              height: 450,
               child: Card(
                 elevation: 50,
                 shadowColor: Colors.white,
@@ -129,8 +129,8 @@ class _RightDrawerState extends State<RightDrawer> {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 200,
+            Expanded(
+              child: Container(),
             ),
             Container(
               color: Color.fromARGB(255, 73, 139, 231),
@@ -156,13 +156,11 @@ class _RightDrawerState extends State<RightDrawer> {
     );
   }
 
-  AutoSizeText socialnum(String caption) {
-    return AutoSizeText(
+  Text socialnum(String caption) {
+    return Text(
       caption,
       textAlign: TextAlign.center,
-      style: TextStyle(
-        color: Colors.black,
-      ),
+      style: TextStyle(color: Colors.black, fontSize: 10),
     );
   }
 
@@ -171,7 +169,7 @@ class _RightDrawerState extends State<RightDrawer> {
       caption,
       textAlign: TextAlign.center,
       style: const TextStyle(
-          color: Color.fromARGB(255, 125, 222, 252), fontSize: 13),
+          color: Color.fromARGB(255, 125, 222, 252), fontSize: 10),
     );
   }
 }
