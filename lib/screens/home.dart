@@ -94,7 +94,7 @@ class _HomeState extends State<Home> {
           
       ),
 
-      drawer: LeftDrawer(),
+      drawer: LeftDrawer(ngan: '', picture: '',),
       endDrawer: RightDrawer(ngan: ngan, picture: picture,),
          
 
@@ -178,7 +178,7 @@ Widget WebLayout(BuildContext context, String ngan, String picture, List data) {
         child: Row(
           children: [
 
-          Container (child : LeftDrawer()),
+          Container (child : LeftDrawer(ngan: ngan, picture: ngan,)),
 
 
           Container(

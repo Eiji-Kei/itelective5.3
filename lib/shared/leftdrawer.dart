@@ -4,14 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:ite5_2022/screens/about.dart';
 import 'package:ite5_2022/screens/home.dart';
 
-class LeftDrawer extends StatefulWidget {
-  const LeftDrawer({super.key});
+class LeftDrawer extends StatelessWidget {
+  final String ngan;
+  final String picture;
+   const LeftDrawer(
+      {Key? key, required this.ngan, required this.picture})
+      : super(key: key);
 
-  @override
-  State<LeftDrawer> createState() => _LeftDrawerState();
-}
-
-class _LeftDrawerState extends State<LeftDrawer> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -91,7 +90,7 @@ class _LeftDrawerState extends State<LeftDrawer> {
                 title: Text('About Us'),
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const AboutUs(ngan: '', picture: '',)));
+                      MaterialPageRoute(builder: (context) => AboutUs(ngan: ngan, picture: ngan,)));
                 },
               ),
             ),
