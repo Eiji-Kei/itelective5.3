@@ -47,7 +47,7 @@ Widget MobileLayout(BuildContext context) {
         ],
       ),
       drawer: LeftDrawer1(),
-      endDrawer: RightDrawer(),
+      endDrawer: RightDrawer(ngan: '', picture: '',),
       body: Stack(
         children: [
           SizedBox(
@@ -99,7 +99,7 @@ Widget WebLayout(BuildContext context) {
           ),
         ],
       ),
-      endDrawer: RightDrawer(),
+      endDrawer: RightDrawer(ngan: '', picture: '',),
       body: Container(
         child: Row(
           children: [

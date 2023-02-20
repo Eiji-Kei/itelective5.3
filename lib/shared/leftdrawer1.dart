@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, unrelated_type_equality_checks
 
 import 'package:flutter/material.dart';
+import 'package:ite5_2022/screens/home.dart';
 
 class LeftDrawer1 extends StatefulWidget {
   const LeftDrawer1({super.key});
@@ -35,7 +36,10 @@ class _LeftDrawerState extends State<LeftDrawer1> {
                   Icons.home,
                 ),
                 title: Text('Home'),
-                onTap: () => 'Null',
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Home()));
+                },
               ),
             ),
             Container(
