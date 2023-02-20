@@ -115,7 +115,7 @@ class _HomeState extends State<Home> {
             height: MediaQuery.of(context).size.height,
             child: data != null
               ? Container(
-                  padding: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(4.0),
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: Card(

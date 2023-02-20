@@ -11,8 +11,8 @@ class AgentsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width *.90,
-      height: 500,
+      width: MediaQuery.of(context).size.width *.50,
+      height: 555,
       child: Card(
         elevation: 70,
         shape: RoundedRectangleBorder(

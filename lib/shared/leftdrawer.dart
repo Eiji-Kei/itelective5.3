@@ -91,7 +91,7 @@ class _LeftDrawerState extends State<LeftDrawer> {
                 title: Text('About Us'),
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const AboutUs()));
+                      MaterialPageRoute(builder: (context) => const AboutUs(ngan: '', picture: '',)));
                 },
               ),
             ),

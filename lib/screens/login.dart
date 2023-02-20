@@ -191,7 +191,9 @@ class LoginScreen extends StatelessWidget {
                       child: 
                         IconButton(
                           onPressed: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => const Home()));
+                            Navigator.pushReplacement(context,
+                              MaterialPageRoute(builder: (BuildContext context) => const Home()),
+                            );
                           }, 
                           icon: Image.asset(
                             caption,

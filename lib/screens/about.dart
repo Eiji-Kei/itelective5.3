@@ -9,7 +9,11 @@ import '../shared/leftdrawer.dart';
 import '../shared/rightdrawer.dart';
 
 class AboutUs extends StatefulWidget {
-  const AboutUs({super.key});
+  final String ngan;
+  final String picture;
+   const AboutUs(
+      {Key? key, required this.ngan, required this.picture})
+      : super(key: key);
 
   @override
   State<AboutUs> createState() => _AboutUsState();
@@ -22,9 +26,9 @@ class _AboutUsState extends State<AboutUs> {
       body: LayoutBuilder(
         builder: (BuildContext, BoxConstraints constraints) {
           if (constraints.maxWidth > 600) {
-            return WebLayout(context);
+            return WebLayout(context, widget.ngan, widget.picture);
           } else {
-            return MobileLayout(BuildContext);
+            return MobileLayout(BuildContext, widget.ngan, widget.picture);
           }
         },
       ),
@@ -32,14 +36,14 @@ class _AboutUsState extends State<AboutUs> {
   }
 }
 
-Widget MobileLayout(BuildContext context) {
+Widget MobileLayout(BuildContext context, String ngan, String picture) {
   return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 81, 147, 242),
         actions: [
           Builder(
             builder: (context) => IconButton(
-              icon: Icon(Icons.account_circle_rounded),
+              icon: Image.network(picture),
               onPressed: () => Scaffold.of(context).openEndDrawer(),
               tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
             ),
@@ -47,7 +51,7 @@ Widget MobileLayout(BuildContext context) {
         ],
       ),
       drawer: LeftDrawer1(),
-      endDrawer: RightDrawer(ngan: '', picture: '',),
+      endDrawer: RightDrawer(ngan: ngan, picture: picture,),
       body: Stack(
         children: [
           SizedBox(
@@ -85,21 +89,21 @@ Widget MobileLayout(BuildContext context) {
       ));
 }
 
-Widget WebLayout(BuildContext context) {
+Widget WebLayout(BuildContext context, String ngan, String picture) {
   return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 81, 147, 242),
         actions: [
           Builder(
             builder: (context) => IconButton(
-              icon: Icon(Icons.account_circle_rounded),
+              icon: Image.network(picture),
               onPressed: () => Scaffold.of(context).openEndDrawer(),
               tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
             ),
           ),
         ],
       ),
-      endDrawer: RightDrawer(ngan: '', picture: '',),
+      endDrawer: RightDrawer(ngan: ngan, picture: picture,),
       body: Container(
         child: Row(
           children: [
