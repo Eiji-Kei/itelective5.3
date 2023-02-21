@@ -135,7 +135,6 @@ Widget MobileLayout(
       ));
 }
 
-// -------------------------web layout ---------------------------
 Widget WebLayout(BuildContext context, String ngan, String picture, List data) {
   return Scaffold(
       appBar: AppBar(
