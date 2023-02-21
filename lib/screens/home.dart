@@ -30,8 +30,9 @@ class _HomeState extends State<Home> {
     getUserData().then((value) {
       var jsonData = jsonDecode(value.body);
       setState(() {
-        ngan = jsonData['results'][0]['name']['first'] + " " +
-               jsonData['results'][0]['name']['last'];
+        ngan = jsonData['results'][0]['name']['first'] +
+            " " +
+            jsonData['results'][0]['name']['last'];
         picture = jsonData['results'][0]['picture']['medium'];
       });
     });
@@ -42,8 +43,6 @@ class _HomeState extends State<Home> {
     Response response = await get(Uri.parse('https://randomuser.me/api/'));
     return response;
   }
-
-  
 
   void getAgent() async {
     Response response = await get(Uri.parse(
@@ -57,15 +56,14 @@ class _HomeState extends State<Home> {
     }
   }
 
-
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       body: LayoutBuilder(
-        builder: (BuildContext, BoxConstraints constraints){
+        builder: (BuildContext, BoxConstraints constraints) {
           if (constraints.maxWidth > 600) {
             return WebLayout(context, ngan, picture, data);
-          }else {
+          } else {
             return MobileLayout(context, ngan, picture, data);
           }
         },
@@ -74,33 +72,31 @@ class _HomeState extends State<Home> {
   }
 }
 
-
-  Widget MobileLayout(BuildContext context, String ngan, String picture, List data) {
-    return Scaffold(
-      appBar: AppBar (
+Widget MobileLayout(
+    BuildContext context, String ngan, String picture, List data) {
+  return Scaffold(
+      appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 81, 147, 242),
-
         actions: [
-            Builder(
-              builder: (context) => IconButton(
-                    icon: Image.network(picture),
-                    onPressed: () => Scaffold.of(context).openEndDrawer(),
-                    tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-                  ),
-
-              
+          Builder(
+            builder: (context) => IconButton(
+              icon: Image.network(picture),
+              onPressed: () => Scaffold.of(context).openEndDrawer(),
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
             ),
-          ],
-          
+          ),
+        ],
       ),
-
-      drawer: LeftDrawer(ngan: '', picture: '',),
-      endDrawer: RightDrawer(ngan: ngan, picture: picture,),
-         
-
-      body: Stack( 
+      drawer: LeftDrawer(
+        ngan: ngan,
+        picture: ngan,
+      ),
+      endDrawer: RightDrawer(
+        ngan: ngan,
+        picture: picture,
+      ),
+      body: Stack(
         children: [
-
           SizedBox(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
@@ -109,113 +105,91 @@ class _HomeState extends State<Home> {
               fit: BoxFit.cover,
             ),
           ),
-
           SizedBox(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            child: data != null
-              ? Container(
-                  padding: EdgeInsets.all(4.0),
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.vertical,
-                    child: Card(
-                      elevation: 50,
-                      shadowColor: Colors.grey,
-                      child: Column(
-                        children:
-                          List.generate(
-                            data.length, ((index) {
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              child: data != null
+                  ? Container(
+                      padding: EdgeInsets.all(4.0),
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.vertical,
+                        child: Card(
+                          elevation: 50,
+                          shadowColor: Colors.grey,
+                          child: Column(
+                            children: List.generate(data.length, ((index) {
                               return AgentsCard(
                                 agents: data[index]['displayName'],
                                 agentpic: data[index]['displayIconSmall'],
                                 description: data[index]['description'],
                               );
-                            })
+                            })),
                           ),
+                        ),
                       ),
-                      
-                    ),
-                  ),
-                )
-                : Center(
-                  child: CircularProgressIndicator(),
-                  )
-          ),
+                    )
+                  : Center(
+                      child: CircularProgressIndicator(),
+                    )),
         ],
-      )  
-    );
-  }
-
-
+      ));
+}
 
 // -------------------------web layout ---------------------------
 Widget WebLayout(BuildContext context, String ngan, String picture, List data) {
-    return Scaffold(
-      appBar: AppBar (
+  return Scaffold(
+      appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 81, 147, 242),
-
         actions: [
-            Builder(
-              builder: (context) => IconButton(
-                    icon: Image.network(picture),
-                    onPressed: () => Scaffold.of(context).openEndDrawer(),
-                    tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-                  ),
-
-              
+          Builder(
+            builder: (context) => IconButton(
+              icon: Image.network(picture),
+              onPressed: () => Scaffold.of(context).openEndDrawer(),
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
             ),
-          ],
-          
+          ),
+        ],
       ),
-
-      endDrawer: RightDrawer(ngan: ngan, picture: picture,),
-
-      
-         
-
-      body: Container( 
+      endDrawer: RightDrawer(
+        ngan: ngan,
+        picture: picture,
+      ),
+      body: Container(
         width: MediaQuery.of(context).size.width,
         child: Row(
           children: [
-
-          Container (child : LeftDrawer(ngan: ngan, picture: ngan,)),
-
-
-          Container(
-            width: MediaQuery.of(context).size.width * .5,
-            height: MediaQuery.of(context).size.height,
-            child: data != null
-              ? Container(
-                  padding: EdgeInsets.all(8.0),
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.vertical,
-                    child: Card(
-                      elevation: 50,
-                      shadowColor: Colors.grey,
-                      child: Column(
-                        children:
-                          List.generate(
-                            data.length, ((index) {
-                              return AgentsCard(
-                                agents: data[index]['displayName'],
-                                agentpic: data[index]['displayIconSmall'], 
-                                description: data[index]['description'],
-                              );
-                            })
+            Container(
+                child: LeftDrawer(
+              ngan: ngan,
+              picture: ngan,
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * .5,
+                height: MediaQuery.of(context).size.height,
+                child: data != null
+                    ? Container(
+                        padding: EdgeInsets.all(8.0),
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.vertical,
+                          child: Card(
+                            elevation: 50,
+                            shadowColor: Colors.grey,
+                            child: Column(
+                              children: List.generate(data.length, ((index) {
+                                return AgentsCard(
+                                  agents: data[index]['displayName'],
+                                  agentpic: data[index]['displayIconSmall'],
+                                  description: data[index]['description'],
+                                );
+                              })),
+                            ),
                           ),
-                      ),
-                      
-                    ),
-                  ),
-                )
-                : Center(
-                  child: CircularProgressIndicator(),
-                  )
-          ),
-        ],
-
+                        ),
+                      )
+                    : Center(
+                        child: CircularProgressIndicator(),
+                      )),
+          ],
         ),
-        
-      )  
-    );
-  }
+      ));
+}
